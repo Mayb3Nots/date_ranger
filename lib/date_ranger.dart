@@ -1,7 +1,5 @@
 library date_ranger;
 
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -89,7 +87,6 @@ class DateRanger extends StatefulWidget {
   ///The minimum vertical space between the activeDate and the dates(_days).
   final double activeDateBottomSpace;
 
-  /// The color used to display the info text. Defaults to [Theme.of(context).colorScheme.primary]
   final Color? infoTextColor;
 
   final bool showDoubleTapInfo;
@@ -173,12 +170,14 @@ class _DateRangerState extends State<DateRanger>
                   ? ColorScheme.light()
                   : ColorScheme.dark())
               .copyWith(
-                  secondary: widget.rangeBackground,
-                  error: widget.errorColor,
-                  background: widget.backgroundColor,
-                  primary: widget.activeItemBackground,
-                  onPrimary: widget.inRangeTextColor,
-                  onBackground: widget.outOfRangeTextColor)),
+            secondary: widget.rangeBackground,
+            error: widget.errorColor,
+            background: widget.backgroundColor,
+            primary: widget.activeItemBackground,
+            onPrimary: widget.inRangeTextColor,
+            onBackground: widget.outOfRangeTextColor,
+            primaryContainer: widget.borderColors,
+          )),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
